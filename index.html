@@ -4,41 +4,14 @@
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 
 <title>AngularJS Applications</title>
-<style>
-p{
-    color : red;
-}
-</style>
+
 </head>
 
-<body>
-<div ng-app="app" ng-controller= "myCtrl">
-  <div ng-show="show">
-    <p>Input something in the input box : </p>
-    <p>Name: <input type="text" ng-model="firstName"></p>
-    <p>Name: <input type="text" ng-model="lastName"></p><br>
-    <input type="checkbox" ng-model="check">Select Me<br>
-    {{getFullName()}}
-    <br>
-  </div>
-	<button ng-click="showOrHide()">Click Me</button>
+<body ng-app="app" ng-controller= "myCtrl">
+<div>
+
 </div>
-<script>
-var app = angular.module('app', []);
-app.controller('myCtrl', function($scope) {
-    $scope.firstName= "John";
-    $scope.lastName= "Doe";
-    $scope.check = true;
-    $scope.show = true;
-    $scope.getFullName = function(){
-    	return $scope.lastName + " " + $scope.firstName;
-    };
-    $scope.showOrHide = function(){
-    	console.log("inside");
-    	$scope.show = !$scope.show;
-    };
-});
-</script>
+
 </body>
 
 </html>
