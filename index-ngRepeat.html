@@ -30,12 +30,13 @@ app.controller('myCtrl', function($scope) {
 
 <body ng-app="app" ng-controller= "myCtrl">
 <div>
+  Search : <input ng-model="search">
   <ul>
-    <li ng-repeat="phone in phones"> <b>{{phone.name}}</b>    <i>{{phone.snippet}}</i> </li>
+    <li ng-repeat="phone in phones | filter:search"> <b>{{phone.name}}</b>    <i>{{phone.snippet}}</i> </li>
   </ul>
   <form ng-submit="add()">
-  <input type="text" ng-model="enteredName">
-  <input type="text" ng-model="enteredSnippet">
+  Name : <input type="text" ng-model="enteredName"><br>
+  Snippet : <input type="text" ng-model="enteredSnippet"><br>
   <input type="submit" value="Add to List">
   </form>
 </div>
